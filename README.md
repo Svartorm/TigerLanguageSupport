@@ -17,7 +17,7 @@ This extension provides syntax highlighting for EPITA's Tiger language.
 ## Install
 Download this repository: 
 ```bash
-git clone 
+git clone https://github.com/Svartorm/TigerLanguageSupport.git
 ```
 Then, run the install script provided:
 ```bash

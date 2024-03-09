@@ -2,7 +2,9 @@
   "name": "tigerlanguagesupport",
   "displayName": "TigerLanguageSupport",
   "description": "Language support and syntax highlighting for EPITA's Tiger programming language",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "publisher": "Svartorm",
+  "icon": "Assets/Icons/tiger.png",
   "engines": {
     "vscode": "^1.87.0"
   },
