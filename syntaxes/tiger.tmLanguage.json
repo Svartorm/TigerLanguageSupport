@@ -1,0 +1,113 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Tiger",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.tiger",
+				"match": "\\b(if|then|else|for|to|while|do)\\b"
+			},
+			{
+				"name": "keyword.operator.tiger",
+				"match": "(\\:=|\\+|-|\\*|/|=|<|>|<>|<=|>=|&|\\|)"
+			},
+			{
+				"name": "keyword.other.tiger",
+				"match": "\\b(type|class|extends|method|self|function|var|break|let|in|end|new|array|of)\\b"
+			},
+			{
+				"name": "storage.type.tiger",
+				"match": "\\b(int|string)\\b"
+			},
+			{
+				"name": "constant.language.tiger",
+				"match": "\\b(nil)\\b"
+			},
+			{
+				"name": "support.function.tiger",
+				"match": "\\b(chr|concat|exit|flush|getchar|not|ord|print|print_err|print_int|size|strcmp|streq|substring)\\b"
+			},
+			{
+				"name": "punctuation.terminator.statement.tiger",
+				"match": ";\\s*$"
+			}]
+		},
+
+		"strings": {
+			"name": "string.quoted.double.tiger",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tiger",
+					"match": "\\\\."
+				}
+			]
+		},
+
+		"comments": {
+            "name": "comment.block.tiger",
+			"begin": "/\\*",
+			"end": "\\*/",
+			"patterns": [
+				{ "include": "#comments" }
+			]
+        },
+
+        "numbers": {
+            "name": "constant.numeric.tiger",
+            "match": "\\b\\d+\\b"
+        },
+
+		"variables": {
+			"name": "variable.other.tiger",
+			"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+		},
+
+		"functions": {
+			"name": "entity.name.function.tiger",
+			"begin": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\(",
+			"end": "\\)",
+			"patterns": [
+				{
+					"include": "#comments"
+				},
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#numbers"
+				},
+				{
+					"include": "#variables"
+				}
+			]
+		}
+	},
+	"scopeName": "source.tiger"
+}
